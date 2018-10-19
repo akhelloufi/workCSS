@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>voiture</title>
+
+<script type="text/javascript">
+<!--
+var i=0;
+	function dem(){document.body.className="bo";
+
+	var i=0;
+	for(i=0;i<=200;i++){
+		var x=document.createElement("div");
+		x.className="circle";
+		x.className+=" anime1";
+		var r1=Math.floor(Math.random()*100);
+		var r2=Math.floor(Math.random()*100);
+		//x.style.webkitAnimationduration=i;
+		x.style.setProperty("-webkit-animation-duration", (r1%100)/10+ "s");
+		 x.style.left=r1+"%";
+		 x.style.top=r1+"%";
+		document.body.appendChild(x);
+	}
+	 
+		/*	i++;
+			x.style.webkitTransform="rotateZ("+i+"deg)";
+			y.style.webkitTransform="rotateZ("+i+"deg)";
+			x.style.webkitTransform="translateX("+i+"%)";
+			y.style.webkitTransform="translateX("+i+"%)";
+			setTimeout("dem()",100);*/
+
+	}
+//-->
+</script>
+  <style type="text/css">
+	.c1{height:5px;width:5px;background-color:white;
+	
+	position:absolute;left:50%;top:50%;
+	
+	}
+	.c2{
+		left:20%;
+	}
+	.bo{background-color:black;}
+
+	/*animation class**/
+		.anime1{
+			position:absolute;
+			-webkit-animation-name:x1;
+			-webkit-animation-duration:5s;
+			-webkit-animation-iteration-count:10;
+			 -webkit-animation-direction:alternate; 
+			-webkit-transform-origin:100%  100% ;
+			  -webkit-transform: perspective( 900px ) rotateZ( 45deg );
+			 /* -webkit-perspective-origin: 25% 75%;*/
+		}
+		@-webkit-keyframes   x1{
+			0%{ -webkit-transform:rotateZ(0deg)  rotateX(0deg) ;top:0%; /* rotateY(0deg);-webkit-transform-origin:100%  100%;*/
+			  background: radial-gradient(circle at 20px 20px, #5cabff, #000);
+			}
+			50% {-webkit-transform:rotateZ(1500deg)  rotateX(0deg);top:100%; /* rotateY(360deg);-webkit-transform-origin:0%  0%;*/
+			  background: radial-gradient(circle at 20px 20px, #ff00cc, #fff)
+			}
+			100% {-webkit-transform:rotateZ(1500deg)  rotateX(360deg);top:30%; /* rotateY(360deg);-webkit-transform-origin:0%  0%;*/
+			  background: radial-gradient(circle at 20px 20px, #5cab0ff, #0ff);
+			}
+		}
+
+		.circle {
+ /* display: block;*/
+  background: black;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  margin: 0;
+  background: radial-gradient(circle at 20px 20px, #5cabff, #000);
+}
+  </style>
+ </head>
+ <body>  
+  
+  <input type="button" value="" onclick=" dem();">
+ </body>
+</html>
