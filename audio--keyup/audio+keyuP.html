@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ 
+  <title>Audio+keyUp</title>
+  <script type="text/javascript">
+function lancer(x){
+var au=document.getElementById("a"+String.fromCharCode(x.keyCode).toLowerCase());
+ au=document.getElementById("a"+String.fromCharCode(x.keyCode).toLowerCase());
+ au=document.getElementById("a"+String.fromCharCode(x.keyCode).toLowerCase());
+ au=document.getElementById("a"+String.fromCharCode(x.keyCode).toLowerCase());
+//au.src="audio/a.wav";
+//au.src="http://www.lepointdufle.net/apprendre_a_lire/a/let/"+String.fromCharCode(x.keyCode);+".mp3";
+au.play();
+//alert("http://www.lepointdufle.net/apprendre_a_lire/a/let/"+String.fromCharCode(x.keyCode).toLowerCase()+".mp3");
+}
+  </script>
+ </head>
+ <body>
+  <input type="button" value="do" onclick="lancer('do');">
+  <input type="text" name=""  onkeyUp="lancer(event);">
+  <audio controls="controls"  id="aa">
+  Votre navigateur ne prend pas en charge l'élément <code>audio</code>.
+  <source src="http://www.lepointdufle.net/apprendre_a_lire/a/let/a.mp3" type="audio/mp3">
+</audio>
+<audio controls="controls"  id="ad">
+  Votre navigateur ne prend pas en charge l'élément <code>audio</code>.
+  <source src="audio/d.mp3" type="audio/mp3">
+</audio>
+<audio controls="controls"  id="af">
+  Votre navigateur ne prend pas en charge l'élément <code>audio</code>.
+  <source src="audio/f.mp3" type="audio/mp3">
+</audio>
+<audio controls="controls"  id="ai">
+  Votre navigateur ne prend pas en charge l'élément <code>audio</code>.
+  <source src="http://www.lepointdufle.net/apprendre_a_lire/a/let/i.mp3" type="audio/mp3">
+</audio>
+ </body>
+</html>
