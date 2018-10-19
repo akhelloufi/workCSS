@@ -1,0 +1,15 @@
+div{ 
+	width:40%;
+	margin:10px;
+	 
+	background:-webkit-linear-gradient(left,red 40%,blue 80%);
+
+}
+.d1{float :left;}
+.d3{float :left;}
+ 
+.d4,.d2{float :right; margin-right:20px;}
+ 
+.cl{clear :both;}
+
+.d1:before{ content: 'ralut'; }

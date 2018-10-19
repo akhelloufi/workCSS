@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+	 <script type="text/javascript">
+	 	function g(){
+	 		 var d=document.createElement("div");
+	 		d.className="d1";
+	 		var t =Math.floor(Math.random()*100);
+	 	    
+	 		d.style.top=t+"%";
+	 		var x =Math.floor(Math.random()*100);
+	 	    
+	 		d.style.left=x+"%"; 
+ 
+	 		var d1=document.createElement("div");
+	 		d1.className="d2";
+	 		  t =Math.floor(Math.random()*100);
+	 	    
+	 		d1.style.top=t+"%";
+	 		  x =Math.floor(Math.random()*100);
+	 	    
+	 		d1.style.left=x+"%";
+ 
+	 		document.body.appendChild(d);
+	 		document.body.appendChild(d1);
+
+	 	}
+	 </script>
+
+</head>
+<body>
+
+	<div class="d1">
+		 
+	 
+	</div> 
+
+
+	<div class="d1" >
+		 
+	 
+	</div>
+
+	<div class="d1" >
+		 
+	 
+	</div>
+	<input type="button" value="geneerer" onclick="g();">
+	<div class="barre"></div>
+</body>
+ 
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="style.css" rel="stylesheet" type="text/css"/> 
+</head>
+<body>
+ 
+<div class="grad"> g
+background:-webkit-linear-gradient(45deg,lime,pink,red);
+</div>  
+ 
+<div class="grad2"> g
+	/*using key words to top, to right, to bottom, to left that correspond 
+to the angle of the gradient is equal to 0deg, 90deg, 180deg and 270deg respectively.*/
+</div>  
+<div class="grad3"> g
+		background-image: linear-gradient(to bottom left, #00CF00, #C5DDE8,red);
+</div>  
+<div class="grad4"> g
+		the so-called color stops. Breakpoints are set in %,
+		 where 0% is the starting point 100% is the ending point, for example:
+.grad4 {
+height: 200px;
+background: linear-gradient(to top, red 20%, #E4E4D8 50%, #A19887 80%);/* def  color red  stopper a 20% ....*/
+}
+</div>  
+<h1>For a clear distribution of colored bands each subsequent color should start from the point it stopped the previous color:</h1>
+<div class="grad5"> 
+g
+
+background: linear-gradient(to right, #FFDDD6 20%, #FFF9ED 20%, #FFF9ED 80%, #DBDBDB 80%);
+
+</div>
+<h1> Radial gradient radial-gradient()
+	</h1>
+<div class="grad6"> 
+g 
+The shape of the gradient is determined by key words circle or ellipse. If the form is not set, the default radial gradient takes the form of an ellipse.
+.grad6 {
+height: 200px;
+background: radial-gradient(white, #FFA9A1);
+}
+
+</div>
+<p>The position of the center is specified using the keyword used in the property background-position, with the addition of consoles at. If the position of the center is not set, use default value at center.</p>
+<div class="grad7"> 
+g  
+.grad7 {
+height: 200px;
+background: radial-gradient(at top, #FEFFFF, #A7CECC);
+}
+
+</div>
+</body>
+ 
+</html>

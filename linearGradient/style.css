@@ -1,0 +1,49 @@
+ div{margin:10px;}
+ .grad{height:200px;
+  background:-webkit-linear-gradient(45deg,lime,pink,red); }
+  body{ background:-webkit-linear-gradient(150deg,lime,pink,red); }/*utiliser deg dans gradient*/
+  body {
+height: 200px;
+background: linear-gradient(to left, #EECFBA, #C5DDE8);
+}
+/*using key words to top, to right, to bottom, to left that correspond 
+to the angle of the gradient is equal to 0deg, 90deg, 180deg and 270deg respectively.*/
+
+.grad2{
+
+
+	height:250px;
+	background-image: linear-gradient(to left, #EECF00, #C5DDE8,red);/*to left =right to right=left attention */
+	border:1px solid;
+}
+/*If the direction is set to a couple of key words, for example to top left,
+ the start point of the gradient will be located in the opposite direction, in this case at the bottom right.
+ */
+ .grad3{
+
+
+	height:250px;
+	/*background-image: linear-gradient(to top left, #00CF00, #C5DDE8,red);*//*tester les cas to top left ... */
+	/*background-image: linear-gradient(to top right, #00CF00, #C5DDE8,red);*/
+	/*background-image: linear-gradient(to bottom right, #00CF00, #C5DDE8,red);*/
+		background-image: linear-gradient(to bottom left, #00CF00, #C5DDE8,red);
+	border:1px solid;
+}
+.grad4 {
+height: 200px;
+background: linear-gradient(to top, red 20%, green 50%, blue 100%);/* def  color red  stopper a 20% ....*/
+}
+.grad5 {
+height: 200px;
+background: linear-gradient(to right, #FFDDD6 20%, #FFF9ED 20%, #FFF9ED 80%, #DBDBDB 80%);
+}
+.grad6 {
+height: 200px;
+background: radial-gradient(white, #FFA9A1);
+}
+
+.grad7 {
+height: 200px;
+background: radial-gradient(at left, #00FF00, red);/*The position of the center is specified using the keyword used in the property background-position, with the addition 
+of consoles at. If the position of the center is not set, use default value at center.*/
+}

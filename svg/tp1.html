@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript">
+		 
+		window.addEventListener("beforeunload", function (event) {
+  event.returnValue = "\o/";
+});
+ 
+// est équivalent à
+window.addEventListener("beforeunload", function (event) {
+  event.preventDefault();
+});
+window.addEventListener("beforeunload", function (e) {
+  var confirmationMessage = "\o/";
+
+  e.returnValue = confirmationMessage;     // Gecko, Trident, Chrome 34+
+  return confirmationMessage;              // Gecko, WebKit, Chrome <34
+});
+	</script>
+
+</head>
+<body>
+<svg width="600" height="200" viewBox="0 0 600 200" zoomAndPan="disable" 
+   xmlns="http://www.w3.org/2000/svg"> 
+   <desc>Exemple SVG - Ligne</desc> 
+
+   <line x1="50" y1="100" x2="150" y2="100" stroke-width="5" stroke="green" /> 
+
+   <line x1="150" y1="100" x2="300" y2="100" stroke-width="5" stroke="black" /> 
+   <line x1="300" y1="100" x2="250" y2="150" stroke-width="5" stroke="black" /> 
+
+   <line x1="350" y1="100" x2="450" y2="100" stroke-width="5" stroke="green" /> 
+   <line x1="400" y1="50" x2="400" y2="150" stroke-width="5" stroke="red" /> 
+   <line x1="370" y1="60" x2="430" y2="140" stroke-width="5" stroke="blue" /> 
+   <line x1="370" y1="140" x2="430" y2="60" stroke-width="5" stroke="yellow" /> 
+      <desc>Exemple SVG - Rectangle</desc> 
+
+   <g transform="rotate(-30)"> 
+   <rect x="10" y="50" width="150" height="100" fill="midnightblue" /> 
+   <rect x="200" y="50" width="150" height="100" rx="10" stroke-width="5" stroke="black" fill="lightsteelblue" /> 
+      <rect x="320" y="270" width="150" height="100" rx="20" fill="none" stroke="gray" stroke-width="5" /> 
+   </g> 
+</svg>
+<div></div>
+<svg width="600" height="200" viewBox="0 0 600 200" zoomAndPan="disable" 
+   xmlns="http://www.w3.org/2000/svg"> 
+   <desc>Exemple SVG - Polygone</desc> 
+
+   <polygon fill="firebrick" stroke="gold" stroke-width="4" 
+      points="80,15 99,71 154,71 114,110 130,171 80,130 30,171 46,110 6,71 61,71" /> 
+
+   <polygon fill="lightsteelblue" stroke="midnightblue" stroke-width="2" 
+      points="250,200 300,200 300,150 350,150 350,200 400,200 400,0 450,0 450,200 500,200 500,50 550,50 550,200" /> 
+</svg>
+</body>
+ 
+</html>
