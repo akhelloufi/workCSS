@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+<script type="text/javascript">
+
+//Tableau des langues 
+var T=[{ fr:"etudiant",eng:"student"},{ fr:"ecole",eng:"school"},{ fr:"cour",eng:"lesson"}];
+var  source,dest;
+function drag(event){
+source=event.target.innerText;
+ event.dataTransfer.setData("Text", event.target.id);
+ event.dataTransfer.setData("src", source);
+}
+
+function allowdrop(event){ 
+	console.log("overx"+event.clientX);
+    console.log("overy"+event.clientY);
+event.preventDefault();
+
+
+}
+
+function drop(event){	
+	console.log("dropx"+event.clientX);
+    console.log("dropy"+event.clientY);
+event.preventDefault();
+
+var data =event.dataTransfer.getData("Text");
+var source=event.dataTransfer.getData("src");///alert(event.target.innerText );
+var x=document.getElementById(data);
+var i,p=-1;
+for(i=0;i<=T.length-1;i++){
+	if(T[i].eng==event.target.innerText){
+		p=i;
+	}
+
+}
+
+//avec map.reduce.filter??
+
+//if(source==T[p].fr){
+	//var p= getOffsetSum(x); 
+	x.style.position="relative";
+	var p=getOffsetRect(event.target) ; 
+	 x.style.left=(event.clientX-p.left-x.style.width)+"px";
+	 x.style.top=(event.clientY-p.top-x.style.height)+"px";
+	
+
+
+ event.target.appendChild(x);
+ //x.addClass("anime1");
+ x.className += " anime1";
+ event.target.style.backgroundColor="green";
+/*}else {x.className += " anime2";
+	event.target.style.backgroundColor="red";
+	
+}*/
+}
+
+function dragLeave(event) {
+    if ( event.target.className == "c1" ) {
+       
+        event.target.style.border = "";
+    }
+}
+
+function dragEnter(event) {
+    if ( event.target.className == "c1" ) {
+        
+        event.target.style.border = "3px dotted red";
+    }
+	   if ( event.target.className == "c2" ) {
+        
+        event.target.style.border = "3px dotted green";
+    }
+}
+function getOffsetRect(elem) {
+ 
+    // (1)
+ 
+    var box = elem.getBoundingClientRect()
+ 
+     
+ 
+    // (2)
+ 
+    var body = document.body
+ 
+    var docElem = document.documentElement
+ 
+     
+ 
+    // (3)
+ 
+    var scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop
+ 
+    var scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft
+ 
+     
+ 
+    // (4)
+ 
+    var clientTop = docElem.clientTop || body.clientTop || 0
+ 
+    var clientLeft = docElem.clientLeft || body.clientLeft || 0
+ 
+     
+ 
+    // (5)
+ 
+    var top  = box.top +  scrollTop - clientTop
+ 
+    var left = box.left + scrollLeft - clientLeft
+ 
+     
+ 
+    return { top: Math.round(top), left: Math.round(left) }
+ 
+}
+
+function getOffsetSum(elem) {
+ 
+    var top=0, left=0
+ 
+    while(elem) {
+ 
+        top = top + parseFloat(elem.offsetTop)
+ 
+        left = left + parseFloat(elem.offsetLeft)
+ 
+        elem = elem.offsetParent       
+ 
+    }
+   
+    return {top: Math.round(top), left: Math.round(left)}
+
+}
+
+</script>
+  <style type="text/css">
+	.c2,.c1{border:1px double blue;height:500px; width:500px;float:left;margin-left:5px;}
+		.h11{border:5px double pink; width:110px;background-color:gray;}
+
+		/*animation class**/
+		.anime1{
+		
+			-webkit-animation-name:x1;
+			-webkit-animation-duration:5s;
+			-webkit-animation-iteration-count:15;
+			-webkit-animation-direction:alternate;
+			-webkit-transform-origin:100%  100%;
+		}
+		@-webkit-keyframes   x1{
+			from{ -webkit-transform:rotateX(0deg) rotateY(0deg);-webkit-transform-origin:100%  100%;}
+			to {-webkit-transform:rotateX(860deg) rotateY(360deg);-webkit-transform-origin:0%  0%;}
+		
+		}
+		.anime2{
+		
+			-webkit-animation-name:x2;
+			-webkit-animation-duration:1s;
+			-webkit-animation-iteration-count:15;
+			-webkit-animation-direction:alternate;
+		}
+		@-webkit-keyframes   x2{
+			from{ -webkit-transform:translateX(10);}
+			to {-webkit-transform:translateX(-10);}
+		
+		}
+  </style>
+ </head>
+ <body> <img  id="im1" src="car3.png" width="100" height="100px" ondragstart="drag(event);"  draggable="true"/>
+<div   id="mot">
+
+
+ <h1  id="im1"   width="100" height="100px" ondragstart="drag(event);"  draggable="true">etudiant</h1>
+</div>
+ <div  id="d1"  class="c1"  ondragover="allowdrop(event);"  ondrop="drop(event);"   ondragleave="dragLeave(event)"  ondragenter="dragEnter(event)">
+student
+
+ </div>
+   <div  id="d2"  class="c1"  ondragover="allowdrop(event);"  ondrop="drop(event);"   ondragleave="dragLeave(event)"  ondragenter="dragEnter(event)">
+school
+
+ </div>
+
+ <script type="text/javascript">
+ <!--
+	var d=document.getElementById('mot');
+var i,s="";
+for(i=0;i<=T.length-1;i++){
+	s=s+"<h1  id='im'"+i+" class='h11'  width='100' height='100px' ondragstart='drag(event);'  draggable='true'>"+T[i].fr+"</h1>";
+}
+
+d.innerHTML=s;
+
+ //-->
+ </script>
+ </body>
+</html>
