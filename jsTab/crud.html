@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tableau Crud</title> 
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+<link href="css/style.css"  rel="stylesheet" type="text/css"  />
+ 
+<script src="js/script.js"></script>
+</head>
+<body>
+<div id="container">
+    <form method="get" action="#">
+          
+      <div class="form-group">
+                <label for="n" >nom :</label> <input  class="form-control" type="text" id="n"  placeholder="nom"/>
+      </div>
+      <div class="form-group">
+            <label for="p" >prenom :</label> <input  class="form-control" type="text" id="p"  placeholder="prenom"/>
+      </div>
+      <div class="form-group">
+            <label for="age" >age :</label> <input  class="form-control" type="text" id="age"  placeholder="age"/>
+      </div>
+      <div class="form-group">
+            <label for="note" >note :</label> <input  class="form-control" type="text" id="note"  placeholder="note"/>
+        </div>
+ 
+        <input type="button" value="afficher"  onclick="afficher();"/>    
+        <input type="button" value="add"  onclick="add(event);"/>
+        <input type="button" value="save and close"  onclick="saveClose();"/>
+        <input type="button" value="trier selon age"  onclick="sort();"/>
+        <input type="button" value="supprimer"  onclick="supprimer();"/>
+
+    </form>
+    <div >
+
+    </div>
+    <div id="bloc1" class="table-responsive-sm">
+      <table class="table">
+         
+      </table>
+    </div>
+</div>
+
+</body>
+
+</html>
+
+ 
