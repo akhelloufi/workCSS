@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ 
+  <title>Montre</title>
+ </head>
+ <style type="text/css">
+	.c1{
+	
+	    position:absolute;
+		left:57%;
+		top:37%;
+		width:5px;
+		height:210px;
+		-webkit-transform-origin:10%   89%;
+		-webkit-transform:rotateZ(0deg);
+		/*background-image:url('heure.png');*/background-color:black;
+	}
+	.c2{
+	
+	    position:absolute;
+		left: 41%;
+		top: 32%;
+		width:420px;
+		height:420px;
+		 z-index:-1;
+		 
+		background-image:url('montre1.jpg');
+	}
+ </style>
+ <script type="text/javascript">
+ var m=0,mi=0,mmi=0;var au=new Audio();au.src="tic.mp3";au.type="audio/mp3";
+  function dem(){
+  var fl=document.getElementById("fl");
+    var flm=document.getElementById("flm");//second
+ var flmm=document.getElementById("flmm");//minute
+
+//document.body.appendChild(au);
+  fl.style.webkitTransform="rotateZ("+m+"deg)";
+  flm.style.webkitTransform="rotateZ("+mi+"deg)";
+    flmm.style.webkitTransform="rotateZ("+mmi+"deg)";
+  mi=mi+1;
+  if(mi%100==0){ 
+  m=m+360/60;
+  if(m%60==0){ 
+  mmi=mmi+360/12;
+  
+  }
+  //au.play();
+  }
+  
+  setTimeout("dem()",1);
+  }
+ </script>
+ <body>
+  <div  id="fl"  class="c1">
+  s
+  </div>
+  <div  id="fl2"  class="c2">
+  s
+  </div>
+    <div  id="flm"  class="c1">
+  s
+  </div>
+      <div  id="flmm"  class="c1">
+  s
+  </div>
+  <input type="button" value="demarrer" onclick="dem();">
+ </body>
+</html>
