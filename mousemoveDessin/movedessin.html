@@ -1,0 +1,21 @@
+<html>
+
+<head>
+<style>
+    .c1{
+        width:500px;height:500px;border: 0px saddlebrown double;
+
+    }
+</style>
+</head>
+<body onmousemove="afficher(event);" onkeyup="stop(event);">
+    <h1>Faire un dessin puis cliquer sur dessiner pour reconstruire le dessin</h1>
+<div id="d1">j</div>
+<input type="button" value="afficher dessin" onclick="dessiner();" />
+<div><canvas id="can" class="c1"></canvas></div>
+ 
+ 
+<script src="movedessin.js"></script>
+</body>
+
+</html>
